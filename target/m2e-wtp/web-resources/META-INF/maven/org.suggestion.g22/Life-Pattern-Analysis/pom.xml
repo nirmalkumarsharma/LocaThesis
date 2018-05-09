@@ -11,12 +11,32 @@
   
   <properties>
   	<org.springframework.version>4.3.16.RELEASE</org.springframework.version>
+  	<org.apache.tiles>3.0.8</org.apache.tiles>
   </properties>
   
-  
-  
-  
   <dependencies>
+ 
+ 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-log4j12</artifactId>
+    	<version>1.8.0-beta2</version>
+    	<scope>test</scope>
+	</dependency>
+  
+  	<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+	<dependency>
+    	<groupId>org.apache.tiles</groupId>
+    	<artifactId>tiles-core</artifactId>
+    	<version>${org.apache.tiles}</version>
+	</dependency>
+  	
+  	<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+	<dependency>
+    	<groupId>org.apache.tiles</groupId>
+    	<artifactId>tiles-jsp</artifactId>
+    	<version>${org.apache.tiles}</version>
+	</dependency>
   
   	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 	<dependency>
@@ -25,6 +45,15 @@
     	<version>4.0.1</version>
     	<scope>provided</scope>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+	<dependency>
+    	<groupId>javax.servlet.jsp.jstl</groupId>
+    	<artifactId>jstl-api</artifactId>
+    	<version>1.2</version>
+	</dependency>
+
+	
   
   	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 	<dependency>
