@@ -5,7 +5,7 @@
 <%@ include file="headcdns.jsp"%>
 
 <body>
-	<form action="submit.html" method="post">
+	<form action="/Life-Pattern-Analysis/locationhistoryJson" method="post" enctype="multipart/form-data">
 		<div class="upload">
 	 		<div class="upload-files">
 	  			<header>
@@ -19,7 +19,7 @@
 		  		<div class="body" id="drop">
 		   			<i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
 		   			<p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a href="" id="triggerFile">browse</a> to begin the upload</p>
-					<input type="file" multiple="multiple" />
+					<input type="file" multiple="multiple" name="files" />
 		  		</div>
 		  		<footer>
 		   			<div class="divider">
