@@ -34,15 +34,12 @@ public class SubmitController
 		
 		MultipartFile[] files = fileFetcher.getFiles();
 		ArrayList<File> receivedFiles=new ArrayList<File>();
+
 		for (MultipartFile multipartFile : files)
 		{
 			receivedFiles.add(convertFile(multipartFile,inputDirectory));
 		}
 		model.addAttribute("files", files);
-		for (File file : receivedFiles)
-		{
-			System.out.println(file.getAbsolutePath());
-		}
 		
 		String jsonDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"JSON"+File.separator;
 		String clJsonDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"CLJSON"+File.separator;

@@ -10,7 +10,7 @@
 	<table class="table table-hover" border="1">
 		<thead>
 			<tr>
-				<th>Files </th>
+				<th>Uploaded Files </th>
 			</tr>
 		</thead>
 		
