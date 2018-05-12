@@ -7,7 +7,7 @@
 <body>
 
 	
-	<table class="table table-hover" border="2">
+	<table class="table table-hover" border="1">
 		<thead>
 			<tr>
 				<th>Files </th>

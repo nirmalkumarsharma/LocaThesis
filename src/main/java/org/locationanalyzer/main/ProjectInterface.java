@@ -1,7 +1,6 @@
-package org.suggestion.g22.controller;
+package org.locationanalyzer.main;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -13,45 +12,31 @@ import org.locationanalyzer.clustering.StayPointCluster;
 import org.locationanalyzer.clustering.StayPointClustering;
 import org.locationanalyzer.entities.json.out.StayPoint;
 import org.locationanalyzer.file.ClusterPointsJSON;
+import org.locationanalyzer.file.FileSelector;
 import org.locationanalyzer.file.StayPointJSON;
 import org.locationanalyzer.file.StayPointKML;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
-@Controller
-public class SubmitController
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
+public class ProjectInterface
 {
-	@Autowired
-	ReceivedFileController fileFetcher;
-	
-	@RequestMapping("/submit")
-	public String submit(Model model) throws IOException
+	public void runProject() throws JsonParseException, JsonMappingException, IOException
 	{
-		String inputDirectory="/home/nirmal/Documents/Final-Year-Project/Input/";
-		
-		MultipartFile[] files = fileFetcher.getFiles();
-		ArrayList<File> receivedFiles=new ArrayList<File>();
-		for (MultipartFile multipartFile : files)
-		{
-			receivedFiles.add(convertFile(multipartFile,inputDirectory));
-		}
-		model.addAttribute("files", files);
-		for (File file : receivedFiles)
-		{
-			System.out.println(file.getAbsolutePath());
-		}
-		
-		String jsonDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"JSON"+File.separator;
-		String clJsonDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"CLJSON"+File.separator;
-		String spKmlDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"SPKML"+File.separator;
-		String clKmlDestPath=inputDirectory+File.separator+".."+File.separator+"Output"+File.separator+"CLKML"+File.separator;
-		
 		StayPointCalc stayPointDetection=new StayPointCalc();
 		StayPointClustering stayPointClustering=new StayPointClustering();
 		ClusterPoint clusterPoint=new ClusterPoint();
+		
+		FileSelector fileSelector=new FileSelector();
+		
+		ArrayList<File> files = fileSelector.getFiles();
+		
+		String currDir=fileSelector.getCurrentDirectory();
+		
+		String jsonDestPath=currDir+File.separator+".."+File.separator+"Output"+File.separator+"JSON"+File.separator;
+		String clJsonDestPath=currDir+File.separator+".."+File.separator+"Output"+File.separator+"CLJSON"+File.separator;
+		String spKmlDestPath=currDir+File.separator+".."+File.separator+"Output"+File.separator+"SPKML"+File.separator;
+		String clKmlDestPath=currDir+File.separator+".."+File.separator+"Output"+File.separator+"CLKML"+File.separator;
 		
 		File jsonFolder=new File(jsonDestPath);
 		File spKmlFolder=new File(spKmlDestPath);
@@ -75,7 +60,7 @@ public class SubmitController
 			clJsonFolder.mkdirs();
 		}
 		
-		for (File file : receivedFiles)
+		for (File file : files)
 		{
 			String sorceJsonPath=file.getAbsolutePath();
 			TreeSet<StayPoint> stayPoints = stayPointDetection.detectStayPoint(sorceJsonPath);
@@ -102,17 +87,5 @@ public class SubmitController
 		System.out.println("StayPoint-KML Files at : "+spKmlFolder.getAbsolutePath());
 		System.out.println("Clustered StayPoint-KML Files at : "+clKmlFolder.getAbsolutePath());
 		System.out.println("Clustered StayPoint-JSON Files at : "+clJsonFolder.getAbsolutePath());
-		
-		return "submit";
-	}
-	
-	private static File convertFile(MultipartFile file ,String inputDirectory) throws IOException
-	{
-	    File convFile = new File(inputDirectory+file.getOriginalFilename());
-	    convFile.createNewFile();
-	    FileOutputStream fos = new FileOutputStream(convFile);
-	    fos.write(file.getBytes());
-	    fos.close();
-	    return convFile;
 	}
 }
