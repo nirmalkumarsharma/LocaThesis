@@ -28,4 +28,12 @@
 		<put-attribute name="body" value="/gui/submit.jsp" />
 		<put-attribute name="current" value="file" />
 	</definition>
+	<definition name="userdef" template="/gui/userdef.jsp">
+		<put-attribute name="footer" value="/gui/footer.jsp" />
+	</definition>
+	<definition name="user" extends="userdef">
+		<put-attribute name="title" expression="User"/>
+		<put-attribute name="body" value="/gui/user.jsp"/>
+		<put-attribute name="current" value="user" />
+	</definition>
 </tiles-definitions>

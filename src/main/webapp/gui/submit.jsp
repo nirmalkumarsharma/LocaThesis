@@ -19,7 +19,7 @@
 			<c:forEach items="${files}" var="file">
 				
 				<tr>
-					<td>${file.originalFilename}</td>
+					 <td><a href="<spring:url value="/user/${file}.html" />" target="_blank">${file}</a></td>
 				</tr>
 				
 				
