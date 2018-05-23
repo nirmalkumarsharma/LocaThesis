@@ -5,28 +5,18 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <body>
-
-	
 	<table class="table table-hover" border="1">
 		<thead>
 			<tr>
-				<th>Uploaded Files </th>
+				<th>Click on the name of the file for the results to be viewed</th>
 			</tr>
 		</thead>
-		
 		<tbody>
-		
 			<c:forEach items="${files}" var="file">
-				
 				<tr>
 					 <td><a href="<spring:url value="/user/${file}.html" />" target="_blank">${file}</a></td>
 				</tr>
-				
-				
 			</c:forEach>
-			
 		</tbody>
 	</table>
-	
-	
 </body>
