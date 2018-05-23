@@ -8,7 +8,7 @@
 	<table class="table table-hover" border="1">
 		<thead>
 			<tr>
-				<th>Click on the name of the file for the results to be viewed</th>
+				<th>Click on the name of the file for the results</th>
 			</tr>
 		</thead>
 		<tbody>
