@@ -23,7 +23,11 @@
 	<property name="maxUploadSize" value="314572800" />
 	<property name="maxInMemorySize" value="314572800" />
 </bean>
-
+<!-- 
+<bean id="canvasjsChartService" class="org.statistical.chart.CanvasjsChartDaoImpl" >
+      
+      </bean>
+ -->
 <mvc:default-servlet-handler/>
 <mvc:annotation-driven />
 <mvc:view-controller path="/" view-name="index"/>
