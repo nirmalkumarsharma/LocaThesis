@@ -99,6 +99,7 @@ public class PatternAnalyzer
 						itrEndTime.setSeconds(0);
 					}
 				}
+				
 				if(itrEndTime.before(itrStartTime)||(itrEndTime.equals(itrStartTime)))
 				{
 					long durInMillisecond=compareTwoTimeStamps(endTime, startTime);

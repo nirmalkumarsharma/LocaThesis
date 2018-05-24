@@ -36,7 +36,7 @@ public class SubmitController
 	@RequestMapping("/submit")
 	public String submit(Model model) throws IOException
 	{
-		String inputDirectory="/home/nirmal/Documents/Final-Year-Project/Input/";
+		String inputDirectory=System.getProperty("user.home")+File.separator+"Documents"+File.separator+"Final-Year-Project"+File.separator+"Input"+File.separator;
 		
 		File inputDirectoryFolder=new File(inputDirectory);
 		if(!inputDirectoryFolder.exists())
