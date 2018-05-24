@@ -9,7 +9,7 @@
 	</definition>
 	<definition name="index" extends="common">
 		<put-attribute name="head" value="/gui/headcdns.jsp"/>
-		<put-attribute name="title" value="Life Pattern Analyzer" />
+		<put-attribute name="title" value="LocaThesis" />
 		<put-attribute name="body" value="/gui/index.jsp" />
 		<put-attribute name="current" value="index" />
 	</definition>

@@ -97,7 +97,7 @@ chart1.render();
 <h1>${user.username}</h1>
 <br>
 <br>
-<table class="table table-hover" border="2">
+<table class="table table-hover" border="0">
 <tr>
 <td colspan="2">
 <div>
