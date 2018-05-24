@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.suggestion</groupId>
-  <artifactId>Suggestion-System</artifactId>
+  <groupId>org.nitj.g22</groupId>
+  <artifactId>LocaThesis</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>Life pattern analysis using geo-locations</name>
+  <name>LocaThesis</name>
   <description>
-  	Analysis of Life using Location History of any person
+  	Derived from English-Location and Greek-τοποθεσία(topothesía) analyze the pattern of the Geo-Location coordinates with time, coordinates are either received through GPS, GLONASS, Beidu(in few cases) or combination of both (GPS, GLONASS).
   </description>
   
   <properties>
