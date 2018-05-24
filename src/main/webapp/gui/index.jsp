@@ -5,7 +5,7 @@
 <%@ include file="headcdns.jsp"%>
 
 <body>
-	<form action="/Suggestion-System/locationhistoryJson" method="post" enctype="multipart/form-data">
+	<form action="/LocaThesis/locationhistoryJson" method="post" enctype="multipart/form-data">
 		<div class="upload">
 	 		<div class="upload-files">
 	  			<header>
