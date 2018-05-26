@@ -136,8 +136,8 @@ public class CanvasjsChartData
 		list.add(dataPoints);
 		return list;
 	}
-	public float millisecondToHours(long millisecond)
+	public double millisecondToHours(long millisecond)
 	{
-		return (int) millisecond/(3600000);
+		return millisecond/(3600000);
 	}
 }
