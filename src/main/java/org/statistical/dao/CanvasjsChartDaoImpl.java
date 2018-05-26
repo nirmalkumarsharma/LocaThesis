@@ -9,6 +9,8 @@ import org.statistical.chart.CanvasjsChartData;
 @Component
 public class CanvasjsChartDaoImpl implements CanvasjsChartDao
 {
+	
+	
 	@Override
 	public List<List<Map<Object, Object>>> getCanvasjsChartData()
 	{

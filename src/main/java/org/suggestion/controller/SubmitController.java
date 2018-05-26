@@ -19,6 +19,7 @@ import org.locationanalyzer.file.StayPointKML;
 import org.locationanalyzer.patterns.entities.StayLocation;
 import org.locationanalyzer.patterns.temporal.PatternAnalyzer;
 import org.locationanalyzer.user.User;
+import org.locationanalyzer.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,6 +69,7 @@ public class SubmitController
 		StayPointClustering stayPointClustering=new StayPointClustering();
 		ClusterPoint clusterPoint=new ClusterPoint();
 		PatternAnalyzer patternAnalyzer=new PatternAnalyzer();
+		UserService userService=new UserService();
 		
 		File jsonFolder=new File(jsonDestPath);
 		File spKmlFolder=new File(spKmlDestPath);
@@ -104,7 +106,6 @@ public class SubmitController
 			ArrayList<StayPointCluster> stayPointClusters = clusterPoint.addToClusters(apparentStayPoint,stayPoints); /*Returns Aggregated Points with Duration and all the stay points lies inside specified cluster*/
 			ArrayList<StayLocation> dayTimePattern = patternAnalyzer.dayTimePattern(stayPointClusters);
 			
-			
 			StayPointJSON jsonGenerator=new StayPointJSON();
 			StayPointKML kmlGenerator = new StayPointKML();
 			ClusterPointsJSON clJsonGenerator = new ClusterPointsJSON();
@@ -124,6 +125,12 @@ public class SubmitController
 
 			User user=new User();
 			user.setUsername(FilenameUtils.getBaseName(file.toString()));
+			user.setTotal(userService.sortByTotal(dayTimePattern));
+			user.setMorning(userService.sortByMorning(dayTimePattern));
+			user.setEvening(userService.sortByEvening(dayTimePattern));
+			user.setNight(userService.sortByNight(dayTimePattern));
+			user.setWeekdays(userService.sortByWeekday(dayTimePattern));
+			user.setWeekend(userService.sortByWeekend(dayTimePattern));
 			users.add(user);
 		}
 		

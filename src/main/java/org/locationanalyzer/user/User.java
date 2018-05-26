@@ -12,12 +12,13 @@ public class User
 	private ArrayList<StayLocation> night;
 	private ArrayList<StayLocation> weekdays;
 	private ArrayList<StayLocation> weekend;
+	private ArrayList<StayLocation> total;
 	
 	public User()
 	{
 		super();
 	}
-	public User(String username, ArrayList<StayLocation> morning, ArrayList<StayLocation> evening, ArrayList<StayLocation> night, ArrayList<StayLocation> weekdays, ArrayList<StayLocation> weekend)
+	public User(String username, ArrayList<StayLocation> morning, ArrayList<StayLocation> evening, ArrayList<StayLocation> night, ArrayList<StayLocation> weekdays, ArrayList<StayLocation> weekend, ArrayList<StayLocation> total)
 	{
 		super();
 		this.username = username;
@@ -26,6 +27,7 @@ public class User
 		this.night = night;
 		this.weekdays = weekdays;
 		this.weekend = weekend;
+		this.total=total;
 	}
 	public String getUsername(){
 		return username;
@@ -62,5 +64,11 @@ public class User
 	}
 	public void setWeekend(ArrayList<StayLocation> weekend) {
 		this.weekend = weekend;
+	}
+	public ArrayList<StayLocation> getTotal() {
+		return total;
+	}
+	public void setTotal(ArrayList<StayLocation> total) {
+		this.total = total;
 	}
 }
