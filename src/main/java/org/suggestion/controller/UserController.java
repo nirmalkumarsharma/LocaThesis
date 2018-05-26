@@ -36,8 +36,20 @@ public class UserController
 		}
 		model.addAttribute("user", users.get(i));
 		
-		List<List<Map<Object, Object>>> canvasjsDataList = canvasjsChartService.getCanvasjsChartData();
+		List<List<Map<Object, Object>>> canvasjsDataList = canvasjsChartService.getCanvasjsChartData(users.get(i));
+		List<List<Map<Object, Object>>> canvasjsDataListMorning = canvasjsChartService.getCanvasjsChartDataMorning(users.get(i));
+		List<List<Map<Object, Object>>> canvasjsDataListEvening = canvasjsChartService.getCanvasjsChartDataEvening(users.get(i));
+		List<List<Map<Object, Object>>> canvasjsDataListNight = canvasjsChartService.getCanvasjsChartDataNight(users.get(i));
+		List<List<Map<Object, Object>>> canvasjsDataListWeekDay = canvasjsChartService.getCanvasjsChartDataWeekDay(users.get(i));
+		List<List<Map<Object, Object>>> canvasjsDataListWeekend = canvasjsChartService.getCanvasjsChartDataWeekend(users.get(i));
+		
+		
 		model.addAttribute("dataPointsList", canvasjsDataList);
+		model.addAttribute("dataPointsListMorning", canvasjsDataListMorning);
+		model.addAttribute("dataPointsListEvening", canvasjsDataListEvening);
+		model.addAttribute("dataPointsListNight", canvasjsDataListNight);
+		model.addAttribute("dataPointsListWeekDay", canvasjsDataListWeekDay);
+		model.addAttribute("dataPointsListWeekend", canvasjsDataListWeekend);
 		
 		
 		return "user";

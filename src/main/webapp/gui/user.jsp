@@ -8,20 +8,20 @@
 window.onload = function() {
  
 var dps = [[]];
-var chart = new CanvasJS.Chart("chartContainer1", {
+var chart = new CanvasJS.Chart("chartContainer", {
 	theme: "light1", // "light1", "light2", "dark1" "dark2"
 	animationEnabled: true,
 	title: {
-		text: "Total"
+		text: "Total Time"
 	},
 	axisY: {
-		title: "Revenue (in billion dollars USD)",
-		prefix: "$",
-		suffix: "bn"
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
 	},
 	data: [{
 		type: "bar",
-		yValueFormatString: "$#,##0.0bn",
+		yValueFormatString: "#,##0.0hrs",
 		indexLabel: "{y}",
 		dataPoints: dps[0]
 	}]
@@ -46,45 +46,192 @@ chart.render();
 
 
 
-var dps1 = [[]];
+var dpsMorning = [[]];
 
-var chart1 = new CanvasJS.Chart("chartContainer2", {
+var chartMorning = new CanvasJS.Chart("chartContainerMorning", {
 	theme: "light1", // "light1", "light2", "dark1" "dark2"
 	animationEnabled: true,
 	title: {
 		text: "Morning"
 	},
 	axisY: {
-		title: "Revenue (in billion dollars USD)",
-		prefix: "$",
-		suffix: "bn"
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
 	},
 	data: [{
 		type: "bar",
-		yValueFormatString: "$#,##0.0bn",
+		yValueFormatString: "#,##0.0hrs",
 		indexLabel: "{y}",
-		dataPoints: dps1[0]
+		dataPoints: dpsMorning[0]
 	}]
 });
-var yValue1;
-var label1;
-<c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">	
-	<c:forEach items="${dataPoints}" var="dataPoint">
-		yValue1 = parseFloat("${dataPoint.y}");
-		label1 = "${dataPoint.label}";
-		dps1[parseInt("${loop.index}")].push({
-			label : label1,
-			y : yValue1
+var yValueMorning;
+var labelMorning;
+<c:forEach items="${dataPointsListMorning}" var="dataPointsMorning" varStatus="loopMorning">	
+	<c:forEach items="${dataPointsMorning}" var="dataPointMorning">
+		yValueMorning = parseFloat("${dataPointMorning.y}");
+		labelMorning = "${dataPointMorning.label}";
+		dpsMorning[parseInt("${loopMorning.index}")].push({
+			label : labelMorning,
+			y : yValueMorning
 		});		
 	</c:forEach>	
 </c:forEach> 
  
-chart1.render();
+chartMorning.render();
 
 
 
 
+var dpsEvening = [[]];
 
+var chartEvening = new CanvasJS.Chart("chartContainerEvening", {
+	theme: "light1", // "light1", "light2", "dark1" "dark2"
+	animationEnabled: true,
+	title: {
+		text: "Evening"
+	},
+	axisY: {
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "#,##0.0hrs",
+		indexLabel: "{y}",
+		dataPoints: dpsEvening[0]
+	}]
+});
+var yValueEvening;
+var labelEvening;
+
+<c:forEach items="${dataPointsListEvening}" var="dataPointsEvening" varStatus="loopEvening">	
+	<c:forEach items="${dataPointsEvening}" var="dataPointEvening">
+		yValueEvening = parseFloat("${dataPointEvening.y}");
+		labelEvening = "${dataPointEvening.label}";
+		dpsEvening[parseInt("${loopEvening.index}")].push({
+			label : labelEvening,
+			y : yValueEvening
+		});		
+	</c:forEach>	
+</c:forEach> 
+ 
+chartEvening.render();
+
+
+var dpsNight = [[]];
+
+var chartNight = new CanvasJS.Chart("chartContainerNight", {
+	theme: "light1", // "light1", "light2", "dark1" "dark2"
+	animationEnabled: true,
+	title: {
+		text: "Night"
+	},
+	axisY: {
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "#,##0.0hrs",
+		indexLabel: "{y}",
+		dataPoints: dpsNight[0]
+	}]
+});
+var yValueNight;
+var labelNight;
+
+<c:forEach items="${dataPointsListNight}" var="dataPointsNight" varStatus="loopNight">	
+	<c:forEach items="${dataPointsNight}" var="dataPointNight">
+		yValueNight = parseFloat("${dataPointNight.y}");
+		labelNight = "${dataPointNight.label}";
+		dpsNight[parseInt("${loopNight.index}")].push({
+			label : labelNight,
+			y : yValueNight
+		});		
+	</c:forEach>	
+</c:forEach> 
+ 
+chartNight.render();
+
+
+
+
+var dpsWeekDay = [[]];
+
+var chartWeekDay = new CanvasJS.Chart("chartContainerWeekDay", {
+	theme: "light1", // "light1", "light2", "dark1" "dark2"
+	animationEnabled: true,
+	title: {
+		text: "Weekdays"
+	},
+	axisY: {
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "#,##0.0hrs",
+		indexLabel: "{y}",
+		dataPoints: dpsWeekDay[0]
+	}]
+});
+var yValueWeekDay;
+var labelWeekDay;
+
+<c:forEach items="${dataPointsListWeekDay}" var="dataPointsWeekDay" varStatus="loopWeekDay">	
+	<c:forEach items="${dataPointsWeekDay}" var="dataPointWeekDay">
+		yValueWeekDay = parseFloat("${dataPointWeekDay.y}");
+		labelWeekDay = "${dataPointWeekDay.label}";
+		dpsWeekDay[parseInt("${loopWeekDay.index}")].push({
+			label : labelWeekDay,
+			y : yValueWeekDay
+		});		
+	</c:forEach>	
+</c:forEach> 
+ 
+chartWeekDay.render();
+
+
+var dpsWeekend = [[]];
+
+var chartWeekend = new CanvasJS.Chart("chartContainerWeekend", {
+	theme: "light1", // "light1", "light2", "dark1" "dark2"
+	animationEnabled: true,
+	title: {
+		text: "Weekends"
+	},
+	axisY: {
+		title: "Time (in hours)",
+		prefix: "",
+		suffix: "hrs"
+	},
+	data: [{
+		type: "bar",
+		yValueFormatString: "#,##0.0hrs",
+		indexLabel: "{y}",
+		dataPoints: dpsWeekend[0]
+	}]
+});
+var yValueWeekend;
+var labelWeekend;
+
+<c:forEach items="${dataPointsListWeekend}" var="dataPointsWeekend" varStatus="loopWeekend">	
+	<c:forEach items="${dataPointsWeekend}" var="dataPointWeekend">
+		yValueWeekend = parseFloat("${dataPointWeekend.y}");
+		labelWeekend = "${dataPointWeekend.label}";
+		dpsWeekend[parseInt("${loopWeekend.index}")].push({
+			label : labelWeekend,
+			y : yValueWeekend
+		});		
+	</c:forEach>	
+</c:forEach> 
+ 
+chartWeekend.render();
 
 
 
@@ -99,28 +246,50 @@ chart1.render();
 <br>
 <table class="table table-hover" border="0">
 <tr>
-<td colspan="2">
+<td colspan="1">
 <div>
-	<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</td>
+<td colspan="1">
+<div>
+	<div id="chartContainerMorning" style="height: 370px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 </td>
 </tr>
+
 <tr>
-<td colspan="2">
+<td colspan="1">
 <div>
-	<div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+	<div id="chartContainerEvening" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</td>
+<td colspan="1">
+<div>
+	<div id="chartContainerNight" style="height: 370px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 </td>
 </tr>
+
+
 <tr>
-<td colspan="2">
+<td colspan="1">
 <div>
-	<div id="chartContainer1" style="height: 370px; width: 100%;"></div>
+	<div id="chartContainerWeekDay" style="height: 370px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</td>
+<td colspan="1">
+<div>
+	<div id="chartContainerWeekend" style="height: 370px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 </td>
 </tr>
+
 </table>
 	
