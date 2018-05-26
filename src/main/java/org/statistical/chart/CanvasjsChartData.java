@@ -37,7 +37,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListMorning(User user)
 	{
-		ArrayList<StayLocation> total = user.getTotal();
+		ArrayList<StayLocation> total = user.getMorning();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
@@ -57,7 +57,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListEvening(User user)
 	{
-		ArrayList<StayLocation> total = user.getTotal();
+		ArrayList<StayLocation> total = user.getEvening();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
@@ -77,7 +77,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListNight(User user)
 	{
-		ArrayList<StayLocation> total = user.getTotal();
+		ArrayList<StayLocation> total = user.getNight();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
@@ -96,7 +96,7 @@ public class CanvasjsChartData
 		return list;
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListWeekDay(User user) {
-		ArrayList<StayLocation> total = user.getTotal();
+		ArrayList<StayLocation> total = user.getWeekdays();
 		Random random=new Random();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
@@ -117,7 +117,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListWeekend(User user)
 	{
-		ArrayList<StayLocation> total = user.getTotal();
+		ArrayList<StayLocation> total = user.getWeekend();
 		Map<Object,Object> map = null;
 		Random random=new Random();
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
