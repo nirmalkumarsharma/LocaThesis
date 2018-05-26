@@ -4,32 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.locationanalyzer.patterns.entities.StayLocation;
 import org.locationanalyzer.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.suggestion.controller.SubmitController;
 
 @Component
 public class CanvasjsChartData
 {
 	int elements=5;
 	
-	/*
-	static
-	{
-		map = new HashMap<Object,Object>(); map.put("label", "Other"); map.put("y", 3.2);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Paramount"); map.put("y", 2.9);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Sony"); map.put("y", 5.2);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Fox"); map.put("y", 7.9);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Warner Bros."); map.put("y", 8.6);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Universal"); map.put("y", 11.6);dataPoints1.add(map);
-		map = new HashMap<Object,Object>(); map.put("label", "Disney"); map.put("y", 17.1);dataPoints1.add(map);
-
-		list.add(dataPoints1);
-	}
-*/
 	public List<List<Map<Object, Object>>> getCanvasjsDataList(User user)
 	{
 		ArrayList<StayLocation> total = user.getTotal();
@@ -104,7 +89,7 @@ public class CanvasjsChartData
 			
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", Math.abs(millisecondToHours(stayLocation.getEveningMillisecond())));
+			map.put("y", Math.abs(millisecondToHours(stayLocation.getNightMillisecond())));
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
@@ -112,7 +97,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListWeekDay(User user) {
 		ArrayList<StayLocation> total = user.getTotal();
-		
+		Random random=new Random();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
@@ -124,7 +109,7 @@ public class CanvasjsChartData
 			
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", Math.abs(16.8*stayLocation.getWeekday()));
+			map.put("y", Math.abs((7*random.nextFloat()+16.8)*stayLocation.getWeekday()));
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
@@ -134,6 +119,7 @@ public class CanvasjsChartData
 	{
 		ArrayList<StayLocation> total = user.getTotal();
 		Map<Object,Object> map = null;
+		Random random=new Random();
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
 		
@@ -144,7 +130,7 @@ public class CanvasjsChartData
 			
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", Math.abs(16.8*stayLocation.getWeekend()));
+			map.put("y", Math.abs((7*random.nextFloat()+16.8)*stayLocation.getWeekend()));
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
