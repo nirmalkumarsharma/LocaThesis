@@ -28,6 +28,11 @@
 		<put-attribute name="body" value="/gui/submit.jsp" />
 		<put-attribute name="current" value="file" />
 	</definition>
+	<definition name="tpc" extends="common">
+		<put-attribute name="title" value="Terms, Condition and Privacy"/>
+		<put-attribute name="body" value="/gui/tpc.jsp" />
+		<put-attribute name="current" value="tpc" />
+	</definition>
 	<definition name="userdef" template="/gui/userdef.jsp">
 		<put-attribute name="footer" value="/gui/footer.jsp" />
 	</definition>

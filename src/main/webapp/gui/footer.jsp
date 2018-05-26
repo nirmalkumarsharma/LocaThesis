@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-&copy;Group 22 CSE NIT Jalandhar
+&copy; 2017-2018 LocThesis. All rights reserved.
 </body>
 </html>
