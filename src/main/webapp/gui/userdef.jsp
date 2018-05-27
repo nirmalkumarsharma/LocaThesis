@@ -29,7 +29,7 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="<spring:url value="/" />">LocaThesisr</a>
+			      <a class="navbar-brand" href="<spring:url value="/" />">LocaThesis</a>
 			    </div>
 			
 			    <div class="collapse navbar-collapse">
