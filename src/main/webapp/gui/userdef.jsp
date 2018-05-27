@@ -36,7 +36,7 @@
 			      <ul class="nav navbar-nav">
 			         <li class="${current=='index'?'active':''}"><a href='<spring:url value="/" />'>Home</a></li>
 			         <li class="${current=='howto'?'active':''}"><a href='<spring:url value="/howto" />'>How to?</a></li>
-			         <li class="${current=='tpc'?'active':''}"><a href='<spring:url value="/tpc" />'>Terms, Condition and Privacy </a></li>
+			         <li class="${current=='tpc'?'active':''}"><a href='<spring:url value="/tpc" />'>Terms, Conditions and Privacy </a></li>
 			         <li class="${current=='aboutus'?'active':''}"><a href='<spring:url value="/aboutus" />'>About us</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
