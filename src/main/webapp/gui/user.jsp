@@ -254,6 +254,6 @@ chartWeekend.render();
 </td>
 </tr>
 <tr>
-	<td colspan="2"><a href="<spring:url value="/user/locations/${user.username}.html" />" target="_blank">Click here</a> to view the details of the all locations.</td>
+	<td colspan="2"><a href="<spring:url value="/user/locations/${user.username}.html" />" target="_blank">Click here</a> to view the details of all the locations.</td>
 </tr>
 </table>
