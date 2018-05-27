@@ -27,7 +27,7 @@
 		<td>
 			While using this application, users must realize that they are sharing one of their private information.
             The owner or developer of this website will not be responsible for any data breach. The information 
-            received through this website will be stored on the server and become the property of the owner. By 
+            received through this website will be stored on the server, thus becomes the property of the owner. By 
             using this application it will be assumed that the owner has willingly provided access to his or her 
             information and giving the right to manipulate the data. 
 		</td>
