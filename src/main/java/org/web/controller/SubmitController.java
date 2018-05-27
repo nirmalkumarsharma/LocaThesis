@@ -1,4 +1,4 @@
-package org.suggestion.controller;
+package org.web.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,12 +37,12 @@ public class SubmitController
 	@RequestMapping("/submit")
 	public String submit(Model model) throws IOException
 	{
-		String inputDirectory=System.getProperty("user.home")+File.separator+"Documents"+File.separator+"Final-Year-Project"+File.separator+"Input"+File.separator;
+		String inputDirectory=System.getProperty("user.home")+File.separator+"Applications"+File.separator+"LocaThesis"+File.separator+"Input"+File.separator;
 		
 		File inputDirectoryFolder=new File(inputDirectory);
 		if(!inputDirectoryFolder.exists())
 		{
-			inputDirectoryFolder.mkdir();
+			inputDirectoryFolder.mkdirs();
 		}
 		
 		MultipartFile[] files = fileFetcher.getFiles();

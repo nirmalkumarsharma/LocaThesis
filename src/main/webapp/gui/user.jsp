@@ -207,7 +207,7 @@ chartWeekend.render();
 
 }
 </script>
-<h1>${user.username}</h1>
+<h1><b>Spent time details for : ${user.username}</b></h1>
 <br>
 <br>
 <table class="table table-hover" border="0">
@@ -252,5 +252,8 @@ chartWeekend.render();
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 </td>
+</tr>
+<tr>
+	<td colspan="2"><a href="<spring:url value="/user/locations/${user.username}.html" />" target="_blank">Click here</a> to view the details of the all locations</td>
 </tr>
 </table>

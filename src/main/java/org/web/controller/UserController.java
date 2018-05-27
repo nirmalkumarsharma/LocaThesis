@@ -1,4 +1,4 @@
-package org.suggestion.controller;
+package org.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;

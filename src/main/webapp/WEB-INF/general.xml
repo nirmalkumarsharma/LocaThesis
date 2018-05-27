@@ -41,4 +41,9 @@
 		<put-attribute name="body" value="/gui/user.jsp"/>
 		<put-attribute name="current" value="user" />
 	</definition>
+	<definition name="locdet" extends="userdef">
+		<put-attribute name="title" expression="Location Details"/>
+		<put-attribute name="body" value="/gui/locdet.jsp"/>
+		<put-attribute name="current" value="locdet" />
+	</definition>
 </tiles-definitions>
