@@ -8,15 +8,13 @@
 	</tr>
 	<tr>
 		<td>
-			<b>Location History.json</b> is your location history data stored in Google Accounts. 
-			Location History.json is your location history data stored in Google Accounts. 
-			It is private data and never meant to be shared with anybody unnecessarily while 
+			<b>Location History.json</b> is a file which contains location history which is stored in Google Accounts. 
+			It is a private data and is never meant to be shared with anybody unnecessarily. While 
 			using this application it is assumed that user is giving this data willingly under no 
-			external physical or mental pressure. This data may be stored for the processing under 
-			various algorithms and may be manipulated. The accuracy of results depends upon the 
-			accuracy of data, while processing the results it is assumed that the data is fully 
-			accurate. The users by no means rely on the output of the application as these are 
-			some rough estimations.			
+			external physical or mental pressure. This data may be stored for the processing and manipulation. 
+			The accuracy of results depends upon the accuracy of data, while processing 
+			the results it is assumed that the data is fully accurate. The users by no means rely on the 
+			output of the application as these are some rough estimations.			
 		</td>
 	</tr>
 </table>
@@ -27,10 +25,11 @@
 	</tr>
 	<tr>
 		<td>
-			While using this application, users must realize that they are sharing one of their private information,
-			The owner or developer of this website responsible for any data breach. The information received through
-			this website is the intellectual property of the owner. By using this application, the owner of data willfully
-			provide access to his or her information and giving the right to manipulate the data. 
+			While using this application, users must realize that they are sharing one of their private information.
+            The owner or developer of this website will not be responsible for any data breach. The information 
+            received through this website will be stored on the server and become the property of the owner. By 
+            using this application it will be assumed that the owner has willingly provided access to his or her 
+            information and giving the right to manipulate the data. 
 		</td>
 	</tr>
 </table>
