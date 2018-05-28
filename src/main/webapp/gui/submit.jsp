@@ -14,7 +14,7 @@
 		<tbody>
 			<c:forEach items="${files}" var="file">
 				<tr>
-					 <td><a href="<spring:url value="/user/${file}.html" />" target="_blank">${file}</a></td>
+					 <td><a href="<spring:url value="/user/${file}.html" />" target="_blank"> ${file} </a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
