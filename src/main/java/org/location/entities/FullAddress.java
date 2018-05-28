@@ -7,9 +7,7 @@ public class FullAddress
 	private double longitude;
 	private String address;
 	
-	public FullAddress() {
-		// TODO Auto-generated constructor stub
-	}
+	public FullAddress() {	}
 
 	public FullAddress(String name, double latitude, double longitude, String address) {
 		super();
@@ -50,5 +48,4 @@ public class FullAddress
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
 }
