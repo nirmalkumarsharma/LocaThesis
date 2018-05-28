@@ -149,22 +149,6 @@ public class PatternAnalyzer
 					long daySpanMillisecond=28800000;
 					long itrTimeDuration=compareTwoTimeStamps(itrStartTime, itrEndTime);
 					long noOfDaySpan=itrTimeDuration/daySpanMillisecond;
-					
-					long pointer=0;
-					if(startTimeRange.equals("morning"))
-					{
-						pointer=1;
-					}
-					if(startTimeRange.equals("evening"))
-					{
-						pointer=2;
-					}
-					if(startTimeRange.equals("night"))
-					{
-						pointer=0;
-					}
-					pointer+=noOfDaySpan;
-					
 					long incrVal=daySpanMillisecond*(noOfDaySpan/3);
 					
 					morningMillisecond+=incrVal;
@@ -172,36 +156,40 @@ public class PatternAnalyzer
 					nightMillisecond+=incrVal;
 					
 					long forFac=noOfDaySpan%3;
-					pointer=(pointer+forFac)%3;
 					
-					if(forFac==1)
+					if(startTimeRange.equals("morning"))
 					{
-						if(pointer==1)
+						if(forFac==1)
 						{
 							morningMillisecond+=daySpanMillisecond;
 						}
-						else if(pointer==2)
+						if(forFac==2)
+						{
+							morningMillisecond+=daySpanMillisecond;
+							eveningMillisecond+=daySpanMillisecond;
+						}
+					}
+					
+					if(startTimeRange.equals("evening"))
+					{
+						if(forFac==1)
 						{
 							eveningMillisecond+=daySpanMillisecond;
 						}
-						else if(pointer==0)
+						if(forFac==2)
 						{
+							eveningMillisecond+=daySpanMillisecond;
 							nightMillisecond+=daySpanMillisecond;
 						}
 					}
-					if(forFac==2)
+					
+					if(startTimeRange.equals("night"))
 					{
-						if(pointer==1)
+						if(forFac==1)
 						{
-							morningMillisecond+=daySpanMillisecond;
-							eveningMillisecond+=daySpanMillisecond;
-						}
-						else if(pointer==2)
-						{
-							eveningMillisecond+=daySpanMillisecond;
 							nightMillisecond+=daySpanMillisecond;
 						}
-						else if(pointer==0)
+						if(forFac==2)
 						{
 							nightMillisecond+=daySpanMillisecond;
 							morningMillisecond+=daySpanMillisecond;
@@ -234,12 +222,9 @@ public class PatternAnalyzer
 				totalMillisecond=totalmillisecondG;
 			}
 			
-			Random random=new Random();
-			
 			if(weekdays==0&&weekends==0)
 			{
-				weekdays=random.nextInt(5)+1;
-				weekends=2*weekdays/5;
+				weekends=(long) (2.83*weekdays/5);
 			}
 			else if(weekends==0)
 			{
@@ -247,7 +232,7 @@ public class PatternAnalyzer
 			}
 			else if(weekdays==0)
 			{
-				weekdays=weekends*(random.nextInt(5)+2)/2;
+				weekdays=(long) (weekends*((float)2.23)/(float)2);
 			}
 			
 			StayLocation stayLocation=new StayLocation(stayPointCluster.getId(),stayPointCluster.getClusterCentre(),morningMillisecond,eveningMillisecond,nightMillisecond,totalMillisecond,weekends,weekdays);
