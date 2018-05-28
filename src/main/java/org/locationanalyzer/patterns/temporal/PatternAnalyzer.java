@@ -4,14 +4,13 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Random;
-
 import org.locationanalyzer.clustering.StayDuration;
 import org.locationanalyzer.clustering.StayPointCluster;
 import org.locationanalyzer.patterns.entities.StayLocation;
 
 public class PatternAnalyzer
 {
+	@SuppressWarnings("deprecation")
 	public ArrayList<StayLocation> dayTimePattern(ArrayList<StayPointCluster> stayPointClusters)
 	{
 		ArrayList<StayLocation> stayLocations=new ArrayList<StayLocation>();
@@ -241,6 +240,7 @@ public class PatternAnalyzer
 		return stayLocations;
 	}
 
+	@SuppressWarnings("deprecation")
 	private String getTimeRange(Timestamp time)
 	{
 		Timestamp morningStartTime=new Timestamp(time.getTime());

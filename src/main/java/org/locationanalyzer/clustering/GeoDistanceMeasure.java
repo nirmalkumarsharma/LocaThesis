@@ -6,6 +6,11 @@ import org.locationanalyzer.calc.GPSCoordinateDistance;
 
 public class GeoDistanceMeasure implements DistanceMeasure
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public double compute(double[] a, double[] b) throws DimensionMismatchException
 	{
 		GPSCoordinateDistance gpsCoordinateDistance=new GPSCoordinateDistance();

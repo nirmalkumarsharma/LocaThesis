@@ -42,13 +42,11 @@
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
-			<center>
-			<tiles:insertAttribute name="body" ignore="true" />
-			</center>
+			<div align="center">
+			<tiles:insertAttribute name="body" />
 			<br><br>
-			<center>
 			<tiles:insertAttribute name="footer" />
-			</center>
+			</div>
 		</div>
 	</body>
 </html>
