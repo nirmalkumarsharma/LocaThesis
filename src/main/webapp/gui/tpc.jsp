@@ -4,7 +4,7 @@
 
 <table>
 	<tr>
-		<td><h3><b>Terms and Condition</b></h3></td>
+		<td><h3><b>Terms and Conditions</b></h3></td>
 	</tr>
 	<tr>
 		<td>
