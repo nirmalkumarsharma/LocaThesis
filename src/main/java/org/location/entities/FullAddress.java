@@ -1,4 +1,4 @@
-package org.openstreetmap.entities;
+package org.location.entities;
 
 public class FullAddress
 {

@@ -5,10 +5,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import org.location.entities.FullAddress;
 import org.locationanalyzer.entities.json.in.LocationAddress;
 import org.locationanalyzer.patterns.entities.StayLocation;
 import org.locationanalyzer.user.User;
-import org.openstreetmap.entities.FullAddress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
