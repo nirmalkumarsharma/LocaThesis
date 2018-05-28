@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Footer</title>
 </head>
 <body>
-&copy; 2017-2018 LocThesis. All rights reserved.
+&copy; 2017-2018 LocaThesis. All rights reserved.
 </body>
 </html>
