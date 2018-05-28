@@ -207,7 +207,7 @@ chartWeekend.render();
 
 }
 </script>
-<h1><b>Spent time details for : ${user.username}</b></h1>
+<h1><b>Spent time details for ${user.username}</b></h1>
 <br>
 <br>
 <table class="table table-hover" border="0">
