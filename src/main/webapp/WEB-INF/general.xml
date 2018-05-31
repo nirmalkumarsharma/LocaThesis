@@ -13,10 +13,10 @@
 		<put-attribute name="body" value="/gui/index.jsp" />
 		<put-attribute name="current" value="index" />
 	</definition>
-	<definition name="howto" extends="common">
-		<put-attribute name="title" value="How to?"/>
-		<put-attribute name="body" value="/gui/howto.jsp"/>
-		<put-attribute name="current" value="howto" />
+	<definition name="help" extends="common">
+		<put-attribute name="title" value="Help"/>
+		<put-attribute name="body" value="/gui/help.jsp"/>
+		<put-attribute name="current" value="help" />
 	</definition>
 	<definition name="aboutus" extends="common">
 		<put-attribute name="title" value="About us"/>
