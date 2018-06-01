@@ -62,7 +62,7 @@ public class UserService
 			{
 				for(int j=0;j<sortedByEvening.size()-i-1;j++)
 				{
-					if(sortedByEvening.get(j).getNightMillisecond()<sortedByEvening.get(j+1).getNightMillisecond())
+					if(sortedByEvening.get(j).getEveningMillisecond()<sortedByEvening.get(j+1).getEveningMillisecond())
 					{
 						StayLocation stayLocation=sortedByEvening.get(j);
 						sortedByEvening.set(j, sortedByEvening.get(j+1));
