@@ -97,7 +97,7 @@ public class CanvasjsChartData
 	}
 	public List<List<Map<Object, Object>>> getCanvasjsDataListWeekDay(User user) {
 		ArrayList<StayLocation> total = user.getWeekdays();
-		Random random=new Random();
+		new Random();
 		Map<Object,Object> map = null;
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
@@ -106,10 +106,9 @@ public class CanvasjsChartData
 		{
 			String location="Location";
 			StayLocation stayLocation=total.get(i);
-			
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", Math.abs((7*random.nextFloat()+16.8)*stayLocation.getWeekday()));
+			map.put("y", stayLocation.getWeekday());
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
@@ -119,7 +118,7 @@ public class CanvasjsChartData
 	{
 		ArrayList<StayLocation> total = user.getWeekend();
 		Map<Object,Object> map = null;
-		Random random=new Random();
+		new Random();
 		List<List<Map<Object,Object>>> list = new ArrayList<List<Map<Object,Object>>>();
 		List<Map<Object,Object>> dataPoints = new ArrayList<Map<Object,Object>>();
 		
@@ -127,10 +126,9 @@ public class CanvasjsChartData
 		{
 			String location="Location";
 			StayLocation stayLocation=total.get(i);
-			
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", Math.abs((7*random.nextFloat()+16.8)*stayLocation.getWeekend()));
+			map.put("y", stayLocation.getWeekend());
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);

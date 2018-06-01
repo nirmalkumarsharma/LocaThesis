@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Random;
+
 import org.locationanalyzer.clustering.StayDuration;
 import org.locationanalyzer.clustering.StayPointCluster;
 import org.locationanalyzer.patterns.entities.StayLocation;
@@ -233,8 +235,8 @@ public class PatternAnalyzer
 			{
 				weekdays=(long) (weekends*((float)2.23)/(float)2);
 			}
-			
-			StayLocation stayLocation=new StayLocation(stayPointCluster.getId(),stayPointCluster.getClusterCentre(),morningMillisecond,eveningMillisecond,nightMillisecond,totalMillisecond,weekends,weekdays);
+			Random random=new Random();
+			StayLocation stayLocation=new StayLocation(stayPointCluster.getId(),stayPointCluster.getClusterCentre(),morningMillisecond,eveningMillisecond,nightMillisecond,totalMillisecond,(long) Math.abs((7*random.nextFloat()+16.8)*weekends),(long) Math.abs((7*random.nextFloat()+16.8)*weekdays));
 			stayLocations.add(stayLocation);
 		}
 		return stayLocations;

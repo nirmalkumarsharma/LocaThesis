@@ -32,8 +32,6 @@ public class StayPointCalc
 		CalculateDistance gpsDistance=new CalculateDistance();
 		CalculateTimeDifference timeDiff=new CalculateTimeDifference();
 		
-		//HashSet<StayPoint> stayPoints=new HashSet<StayPoint>();
-		
 		TreeSet<StayPoint> stayPoints=new TreeSet<StayPoint>();
 		
 		while(i < pointNum)
