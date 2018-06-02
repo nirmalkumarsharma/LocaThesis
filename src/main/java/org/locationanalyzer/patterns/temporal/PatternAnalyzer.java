@@ -220,19 +220,6 @@ public class PatternAnalyzer
 			{
 				totalMillisecond=totalmillisecondG;
 			}
-			
-			if(weekdays==0&&weekends==0)
-			{
-				weekends=(long) (2.83*weekdays/5);
-			}
-			else if(weekends==0)
-			{
-				weekends=2*weekdays/5;
-			}
-			else if(weekdays==0)
-			{
-				weekdays=(long) (weekends*((float)2.23)/(float)2);
-			}
 			StayLocation stayLocation=new StayLocation(stayPointCluster.getId(),stayPointCluster.getClusterCentre(),morningMillisecond,eveningMillisecond,nightMillisecond,totalMillisecond,weekends,weekdays);
 			stayLocations.add(stayLocation);
 		}
