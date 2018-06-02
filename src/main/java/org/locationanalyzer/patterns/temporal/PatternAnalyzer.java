@@ -40,10 +40,12 @@ public class PatternAnalyzer
 				{
 					if(calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY||calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY)
 					{
-						weekends=weekends+Math.abs(duration.getDepartureTime().getTime()-duration.getArrivalTime().getTime());
+						weekends+=compareTwoTimeStamps(startTime, endTime);
 					}
 					else
-						weekdays=weekdays+Math.abs(duration.getDepartureTime().getTime()-duration.getArrivalTime().getTime());
+					{
+						weekdays+=compareTwoTimeStamps(startTime, endTime);
+					}
 					lastDay=startTime.getDay();
 				}
 				
