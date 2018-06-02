@@ -108,7 +108,7 @@ public class CanvasjsChartData
 			StayLocation stayLocation=total.get(i);
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", stayLocation.getWeekday());
+			map.put("y", Math.abs(millisecondToHours(stayLocation.getWeekday())));
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
@@ -128,7 +128,7 @@ public class CanvasjsChartData
 			StayLocation stayLocation=total.get(i);
 			map = new HashMap<Object,Object>();
 			map.put("label", location+"-"+stayLocation.getId());
-			map.put("y", stayLocation.getWeekend());
+			map.put("y", Math.abs(millisecondToHours(stayLocation.getWeekend())));
 			dataPoints.add(map);
 		}
 		list.add(dataPoints);
