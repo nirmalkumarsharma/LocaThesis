@@ -46,7 +46,7 @@ public class LocationListController
 		{
 			double lati=stayLocation.getClusterCentre().getLatitudeE7()/Math.pow(10, 7);
 			double longi=stayLocation.getClusterCentre().getLongitudeE7()/Math.pow(10, 7);
-			String url="https://eu1.locationiq.org/v1/reverse.php?key=91b61f3ada4329&lat="+lati+"&lon="+longi+"&format=json&addressdetails=0";
+			String url="https://eu1.locationiq.org/v1/reverse.php?key=91b61f3ada4329&lat="+lati+"&lon="+longi+"&format=json&addressdetails=0&zoom=25";
 			LocationAddress addr=mapper.readValue(new URL(url), LocationAddress.class);
 			FullAddress fullAddress=new FullAddress("Location-"+j,lati,longi,addr.getDisplay_name());
 			locationAddress.add(fullAddress);
